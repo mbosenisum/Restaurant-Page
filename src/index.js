@@ -1,8 +1,9 @@
-// import { menuTabSwitch } from "./menu.js";
+import { clearDocument } from "./clearDocument.js"
+import { menuTabSwitch } from "./menu.js";
 
 console.log('index.js');
 
-let content = document.getElementById('content');
+// let content = document.getElementById('content');
 
 let homeTab = document.createElement('div');
 homeTab.textContent = "Home";
@@ -22,16 +23,7 @@ docBody[0].appendChild(homeTab);
 docBody[0].appendChild(contactTab);
 docBody[0].appendChild(menuTab);
 
-function clearDocument() {
-    let content = document.getElementById('content');
-    content.remove();
 
-    let contentDiv = document.createElement('div');
-    contentDiv.setAttribute("id", "content");
-    let body = document.getElementsByTagName('body');
-    // console.log("body = " + body);
-    body[0].appendChild(contentDiv);
-}
 
 function homeTabSwitch() {
     clearDocument();
@@ -61,14 +53,14 @@ function contactTabSwitch() {
 }
 contactTab.addEventListener('click', contactTabSwitch);
 
-function menuTabSwitch() {
-    clearDocument();
+// function menuTabSwitch() {
+//     clearDocument();
 
-    let items = document.createElement('div');
-    items.textContent = 'bacon, egg, bagel';
-    let content = document.getElementById('content');
-    content.appendChild(items);
-}
+//     let items = document.createElement('div');
+//     items.textContent = 'bacon, egg, bagel';
+//     let content = document.getElementById('content');
+//     content.appendChild(items);
+// }
 menuTab.addEventListener('click', menuTabSwitch);
 
 // export {menuTabSwitch};
