@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 // https://webpack.js.org/concepts/entry-points/
 module.exports = {
@@ -30,12 +30,11 @@ module.exports = {
     // new CopyPlugin([
     //   { from: 'src', to: 'dist' },
     // ]),
-    // new CopyPlugin({
-    //   patterns: [
-    //     { from: 'src/*.png', to: 'dist' },
-    //     __dirname,
-    //   ],
-    // }),
+    new CopyPlugin({
+      patterns: [
+        { from: path.resolve(__dirname,'src/optiplex_neofetch.png'), to: path.resolve(__dirname,'dist'), },
+      ],
+    }),
   ],
   output: {
     filename: '[name].js',
